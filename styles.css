@@ -1,3 +1,9 @@
+ body {
+  background-color: blanchedalmond;
+  justify-content: center;
+ }
+ 
+ 
  h1 {
    margin: 0;
    text-align: center;
@@ -13,7 +19,6 @@
   width: 800px;
   align-self: center;
   margin: auto;
-  background-color: bisque;
  }
 
  section {
