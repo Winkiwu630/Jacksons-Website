@@ -4,6 +4,11 @@
    background: #222;
    padding: 20px;
    box-shadow: 0 4px 8px(0,0,0,0.1);
+   color:aquamarine;
  }
   
-   
+ main {
+  width: 800px;
+  align-self: center;
+  margin: auto;
+ }
