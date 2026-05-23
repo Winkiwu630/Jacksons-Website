@@ -84,6 +84,19 @@
     ];
     let qi = 0;
     const bq = document.querySelector('.quote-banner blockquote');
+    // Lock banner to height of tallest quote at current viewport
+    (function() {
+      var banner = document.querySelector('.quote-banner');
+      var maxH = 0;
+      quotes.forEach(function(q) {
+        bq.querySelector('.quote-text').textContent = '“' + q.text + '”';
+        bq.querySelector('.quote-cite').textContent = q.cite;
+        maxH = Math.max(maxH, banner.scrollHeight);
+      });
+      banner.style.minHeight = maxH + 'px';
+      bq.querySelector('.quote-text').textContent = '“' + quotes[0].text + '”';
+      bq.querySelector('.quote-cite').textContent = quotes[0].cite;
+    })();
     setInterval(() => {
       bq.style.opacity = '0';
       setTimeout(() => {
