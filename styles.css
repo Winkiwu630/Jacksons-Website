@@ -41,6 +41,9 @@ header {
 
 .hero {
   background-color: #1c1c1c;
+  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/fog.jpg');
+  background-size: cover;
+  background-position: center top;
   text-align: center;
   padding: 24px 20px 16px;
 }
@@ -48,7 +51,7 @@ header {
 h1 {
   font-size: 1.9rem;
   letter-spacing: 2px;
-  color: #e8e8e8;
+  color: red;
   margin-bottom: 4px;
 }
 
@@ -346,6 +349,24 @@ h3 {
   font-weight: bold;
 }
 .see-all-link:hover { text-decoration: underline; }
+
+/* ── RECYCLA-BULL ASSETS ── */
+.book-title-img {
+  max-width: 260px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.recycla-circle {
+  text-align: center;
+  margin: 8px 0 28px;
+}
+
+.recycla-circle img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
 
 /* ── BOOKS PAGE ── */
 .book-section-label {
