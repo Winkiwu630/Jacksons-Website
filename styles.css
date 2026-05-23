@@ -16,6 +16,9 @@
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: #1a1a2a;
   background-image:
     radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
@@ -175,7 +178,9 @@ nav a.active:hover { background-color: #3a3a3a; }
 
 /* ── MAIN ── */
 main {
+  flex: 1;
   max-width: 900px;
+  width: 100%;
   margin: 40px auto;
   padding: 0 20px;
 }
