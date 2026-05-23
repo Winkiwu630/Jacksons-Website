@@ -210,7 +210,7 @@ h3 {
   height: 138px;
   background-color: #3a3a3a;
   border-radius: 4px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   text-align: center;
