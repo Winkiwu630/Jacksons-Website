@@ -1,33 +1,86 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
   <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jackson J Becker — Author of Recycla-Bull and upcoming Fantasy and Sci-Fi novels.">
     <link rel="stylesheet" href="styles.css">
-
-    <title>Jackson Becker Homepage</title>
-    
+    <title>Jackson J Becker — Author</title>
   </head>
 
   <body>
 
+    <header>
+      <h1>Jackson J Becker</h1>
+      <p class="tagline">Author of Children's, Fantasy & Science Fiction</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#books">Books</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
     <main>
 
-      <h1>Jackson J Becker</h1>
+      <section id="about">
+        <div class="about-grid">
+          <div class="author-photo">
+            <img src="author-photo.jpg" alt="Jackson J Becker" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder">
+              <span>Photo<br>Coming Soon</span>
+            </div>
+          </div>
+          <div class="about-text">
+            <h2>About Jackson</h2>
+            <p>Bio coming soon...</p>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h2>Author Bio</h2>
-          Bio goes here....<br>
-            < --- Photo over there or over here --- >
-        </section>
+      <section id="books">
+        <h2>Books</h2>
 
-        <section>
-          Maybe a blog spot to post about how things are going, progress on books, ect?
-        </section>
-    
+        <div class="book-card featured">
+          <div class="book-cover">
+            <img src="recycla-bull-cover.jpg" alt="Recycla-Bull cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="cover-placeholder">
+              <span>Recycla-Bull</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <h3>Recycla-Bull</h3>
+            <p class="genre">Children's Picture Book</p>
+            <p>When the animals on Farmer Jo's farm wake to find their home covered in litter, they call on RECYCLA-BULL to help clean it up. The heroic steer teaches the animals and young readers how to recycle right, reduce waste, and make sustainable choices to protect their natural resources.</p>
+            <p>This wonderful story introduces young readers to the world of recycling and encourages them to take good care of their planet.</p>
+            <div class="buy-links">
+              <a href="https://www.amazon.com/dp/B0GWMDR71H" class="buy-btn amazon" target="_blank">Buy on Amazon</a>
+              <a href="https://www.barnesandnoble.com/w/recycla-bull-jackson-becker/1149872460" class="buy-btn bn" target="_blank">Buy on Barnes & Noble</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="coming-soon">
+          <h3>More Books Coming Soon</h3>
+          <p>Jackson is currently working on upcoming Fantasy and Science Fiction titles. Check back for updates!</p>
+        </div>
+
+      </section>
+
+      <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>For inquiries, reach out via social media or email.</p>
+        <div class="contact-links">
+          <a href="mailto:" class="contact-btn">Email</a>
+        </div>
+      </section>
+
     </main>
 
+    <footer>
+      <p>&copy; 2026 Jackson J Becker. All rights reserved.</p>
+    </footer>
+
   </body>
-  
+
 </html>
