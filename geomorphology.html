@@ -17,12 +17,23 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="books.html">Books</a>
-      <a href="inspiration.html">Inspiration</a>
-      <a href="geomorphology.html" class="active">Geomorphology</a>
-      <a href="recycling.html">Recycling</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-btn active">Interests ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="geomorphology.html" class="active">Geomorphology</a>
+          <a href="recycling.html">Recycling</a>
+        </div>
+      </div>
       <a href="#contact">Contact</a>
     </nav>
   </header>
+
+  <div class="quote-banner">
+    <blockquote>
+      <span class="quote-text">"Every little detail you can smuggle into your fiction makes the world more real for your reader."</span>
+      <cite class="quote-cite">— Neil Gaiman</cite>
+    </blockquote>
+  </div>
 
   <main>
 
@@ -57,6 +68,37 @@
   <footer>
     <p>&copy; 2026 Jackson J Becker &mdash; All rights reserved.</p>
   </footer>
+
+  <script>
+    const quotes = [
+      { text: "Every little detail you can smuggle into your fiction makes the world more real for your reader.", cite: "— Neil Gaiman" },
+      { text: "We are the cosmos made conscious, and life is a means by which the universe understands itself.", cite: "— Professor Brian Cox" },
+      { text: "Fairy tales are more than true — not because they tell us that dragons exist, but because they tell us that dragons can be defeated.", cite: "— G.K. Chesterton" }
+    ];
+    let qi = 0;
+    const bq = document.querySelector('.quote-banner blockquote');
+    setInterval(() => {
+      bq.style.opacity = '0';
+      setTimeout(() => {
+        qi = (qi + 1) % quotes.length;
+        bq.querySelector('.quote-text').textContent = '“' + quotes[qi].text + '”';
+        bq.querySelector('.quote-cite').textContent = quotes[qi].cite;
+        bq.style.opacity = '1';
+      }, 600);
+    }, 6000);
+
+    document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.closest('.nav-dropdown').classList.toggle('open');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
 
 </body>
 </html>

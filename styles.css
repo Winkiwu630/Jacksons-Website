@@ -60,6 +60,7 @@ nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   padding: 8px 16px;
   background-color: #ffffff;
@@ -91,6 +92,85 @@ nav a.active {
 }
 
 nav a.active:hover { background-color: #3a3a3a; }
+
+/* ── DROPDOWN ── */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-btn {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border: 1px solid #aaaaaa;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  z-index: 200;
+  min-width: 180px;
+  overflow: hidden;
+}
+
+@media (hover: hover) {
+  .nav-dropdown:hover .nav-dropdown-content { display: block; }
+}
+
+.nav-dropdown.open .nav-dropdown-content { display: block; }
+
+.nav-dropdown-content a {
+  display: block;
+  padding: 10px 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+  background: #ffffff;
+  color: #1c1c1c;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+.nav-dropdown-content a:last-child { border-bottom: none; }
+.nav-dropdown-content a:hover { background: #f0f0f0; }
+.nav-dropdown-content a.active { background: #1c1c1c; color: #ffffff; font-weight: bold; }
+
+/* ── QUOTE BANNER ── */
+.quote-banner {
+  background-color: #111120;
+  border-bottom: 1px solid #2a2a3a;
+  padding: 16px 40px;
+  text-align: center;
+}
+
+.quote-banner blockquote {
+  font-style: italic;
+  color: #b8b8cc;
+  font-size: 0.92rem;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.65;
+  transition: opacity 0.6s ease;
+}
+
+.quote-banner cite {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  font-style: normal;
+  color: #707088;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
 
 /* ── MAIN ── */
 main {
@@ -301,7 +381,7 @@ h3 {
   height: 220px;
   background-color: #3a3a3a;
   border-radius: 6px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -333,18 +413,6 @@ h3 {
   margin-bottom: 10px;
 }
 
-.disclaimer-note {
-  margin-top: 20px;
-  padding: 12px 16px;
-  background: #f5f5f5;
-  border-left: 4px solid #c0c0c0;
-  border-radius: 0 6px 6px 0;
-  font-family: Arial, sans-serif;
-  font-size: 0.85rem;
-  color: #6b6b6b;
-  font-style: italic;
-}
-
 .buy-links {
   display: flex;
   gap: 12px;
@@ -368,7 +436,7 @@ h3 {
 .amazon { background-color: #f0921a; color: #fff; border-color: #d4800f; }
 .bn     { background-color: #1c1c1c; color: #f5f5f5; border-color: #1c1c1c; }
 
-/* ── QUOTES ── */
+/* ── QUOTES (inspiration page) ── */
 .quote-card {
   background: #f9f9f9;
   border-left: 5px solid #4a7a5a;
@@ -376,27 +444,9 @@ h3 {
   padding: 28px 32px;
   margin-bottom: 24px;
 }
-
 .quote-card:last-child { margin-bottom: 0; }
-
-.quote-card blockquote {
-  font-size: 1.1rem;
-  font-style: italic;
-  color: #2c2c2c;
-  line-height: 1.8;
-}
-
-.quote-card cite {
-  display: block;
-  margin-top: 14px;
-  font-size: 0.85rem;
-  font-style: normal;
-  color: #6b6b6b;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+.quote-card blockquote { font-size: 1.1rem; font-style: italic; color: #2c2c2c; line-height: 1.8; }
+.quote-card cite { display: block; margin-top: 14px; font-size: 0.85rem; font-style: normal; color: #6b6b6b; font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
 
 /* ── GEOMORPHOLOGY ── */
 .video-list {
@@ -415,13 +465,7 @@ h3 {
 }
 
 .video-list li:last-child { border-bottom: none; }
-
-.video-list li::before {
-  content: '▶';
-  color: #4a7a5a;
-  font-size: 0.8rem;
-  flex-shrink: 0;
-}
+.video-list li::before { content: '▶'; color: #4a7a5a; font-size: 0.8rem; flex-shrink: 0; }
 
 .disclaimer-box {
   background: #f5f5f5;
@@ -435,16 +479,8 @@ h3 {
 }
 
 /* ── CONTACT ── */
-#contact p {
-  margin-bottom: 24px;
-  font-size: 1.05rem;
-}
-
-.contact-links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
+#contact p { margin-bottom: 24px; font-size: 1.05rem; }
+.contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ── FOOTER ── */
 footer {
@@ -463,10 +499,12 @@ footer {
   .hero { padding: 14px 16px 10px; }
   nav { gap: 8px; padding: 6px 10px; }
   nav a { padding: 6px 10px; font-size: 0.78rem; }
+  .quote-banner { padding: 12px 20px; }
   .about-grid { flex-direction: column; align-items: center; }
   .book-card { flex-direction: column; align-items: center; text-align: center; }
   .buy-links { justify-content: center; }
   .book-preview-grid { grid-template-columns: 1fr; }
   section { padding: 24px 20px; }
   .quote-card { padding: 20px; }
+  .nav-dropdown-content { left: 0; transform: none; }
 }
