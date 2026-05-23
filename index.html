@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
   <link rel="stylesheet" href="styles.css">
   <title>Jackson J Becker — Author</title>
 </head>
-
 <body>
 
   <header>
@@ -19,10 +17,12 @@
       <p class="tagline">Author of Children's, Fantasy & Science Fiction</p>
     </div>
     <nav>
-      <a href="#about" class="active" data-section="about">About</a>
-      <a href="#books" data-section="books">Books</a>
-      <a href="#inspiration" data-section="inspiration">Inspiration</a>
-      <a href="#contact" data-section="contact">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="books.html">Books</a>
+      <a href="inspiration.html">Inspiration</a>
+      <a href="geomorphology.html">Geomorphology</a>
+      <a href="recycling.html">Recycling</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -32,7 +32,7 @@
       <h2>About Jackson</h2>
       <div class="about-grid">
         <div class="author-photo">
-          <img src="author-photo.jpg" alt="Jackson J Becker" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <img src="Jackson_Olivia.jpg" alt="Jackson J Becker" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
           <div class="photo-placeholder"><span>Photo<br>Coming Soon</span></div>
         </div>
         <div class="about-text">
@@ -44,48 +44,48 @@
       </div>
     </section>
 
-    <section id="books">
+    <section id="books-preview">
       <h2>Books</h2>
+      <div class="book-preview-grid">
 
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="Recycla-Bull.jpg" alt="Recycla-Bull book cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="cover-placeholder"><span>Recycla-Bull</span></div>
-        </div>
-        <div class="book-info">
+        <div class="book-preview-card">
+          <img src="Recycla-Bull.jpg" alt="Recycla-Bull cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="preview-cover-placeholder">Recycla-Bull</div>
           <h3>Recycla-Bull</h3>
           <p class="genre">Children's Picture Book</p>
-          <p>When the animals on Farmer Jo's farm wake to find their home covered in litter, they call on RECYCLA-BULL to help clean it up. The heroic steer teaches the animals and young readers how to recycle right, reduce waste, and make sustainable choices to protect their natural resources.</p>
-          <p>This wonderful story introduces young readers to the world of recycling and encourages them to take good care of their planet.</p>
-          <div class="buy-links">
-            <a href="https://www.amazon.com/dp/B0GWMDR71H" class="buy-btn amazon" target="_blank" rel="noopener">Buy on Amazon</a>
-            <a href="https://www.barnesandnoble.com/w/recycla-bull-jackson-becker/1149872460" class="buy-btn bn" target="_blank" rel="noopener">Buy on Barnes & Noble</a>
-          </div>
+          <p class="blurb">A heroic steer teaches Farmer Jo's animals how to recycle right and protect their home.</p>
+          <span class="status-badge badge-available">Available Now</span>
+          <br><br>
+          <a href="books.html" class="card-link">View Details →</a>
         </div>
+
+        <div class="book-preview-card">
+          <div class="preview-cover-placeholder">The United States of Magic</div>
+          <h3>The United States of Magic</h3>
+          <p class="genre">Adult Fantasy Series</p>
+          <p class="blurb">A metallurgist's quest for vengeance draws him into a world of mages and magic during the American Civil War.</p>
+          <span class="status-badge badge-querying">Querying</span>
+          <br><br>
+          <a href="books.html" class="card-link">View Details →</a>
+        </div>
+
+        <div class="book-preview-card">
+          <div class="preview-cover-placeholder">Star Stuff Like Us</div>
+          <h3>Star Stuff Like Us</h3>
+          <p class="genre">Adult Sci-Fi</p>
+          <p class="blurb">Inspired by NASA JPL travel posters and a lifelong love of the cosmos.</p>
+          <span class="status-badge badge-drafting">Drafting</span>
+          <br><br>
+          <a href="books.html" class="card-link">View Details →</a>
+        </div>
+
       </div>
-
-      <div class="coming-soon">
-        <h3>Coming Soon</h3>
-        <ul>
-          <li>The United States of Magic — Book 1</li>
-          <li>The United States of Magic — Book 2</li>
-          <li>Star Stuff Like Us (working title)</li>
-        </ul>
-      </div>
-
-    </section>
-
-    <section id="inspiration" class="quote-section">
-      <h2>Inspiration</h2>
-      <blockquote>
-        "Every little detail you can smuggle into your fiction makes the world more real for your reader."
-        <cite>— Neil Gaiman</cite>
-      </blockquote>
+      <a href="books.html" class="see-all-link">See all books →</a>
     </section>
 
     <section id="contact">
       <h2>Get in Touch</h2>
-      <p>Interested in Jackson's work or have a question? Reach out below.</p>
+      <p>Interested in Jackson's work, want to beta read, or just have a question? Reach out below.</p>
       <div class="contact-links">
         <a href="mailto:jjbecker@live.com" class="buy-btn bn">Email Jackson</a>
         <a href="https://twitter.com/jacksonjbecker" class="buy-btn bn" target="_blank" rel="noopener">Twitter / X</a>
@@ -97,23 +97,6 @@
   <footer>
     <p>&copy; 2026 Jackson J Becker &mdash; All rights reserved.</p>
   </footer>
-
-  <script>
-    const navLinks = document.querySelectorAll('nav a[data-section]');
-    const sections = document.querySelectorAll('main section');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          const active = document.querySelector(`nav a[data-section="${entry.target.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-30% 0px -60% 0px' });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
 
 </body>
 </html>
