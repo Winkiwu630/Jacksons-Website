@@ -26,7 +26,7 @@
           <a href="recycling.html">Recycling</a>
         </div>
       </div>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -96,23 +96,18 @@
       <a href="books.html" class="see-all-link">See all books →</a>
     </section>
 
-    <section id="contact">
-      <h2>Get in Touch</h2>
-      <p>Interested in Jackson's work, want to beta read, or just have a question? Reach out below.</p>
-      <div class="contact-links">
-        <a href="mailto:jjbecker@live.com" class="buy-btn bn">Email Jackson</a>
-        <a href="https://twitter.com/jacksonjbecker" class="buy-btn bn" target="_blank" rel="noopener">Twitter / X</a>
-      </div>
-    </section>
-
   </main>
 
   <footer>
     <p>&copy; 2026 Jackson J Becker &mdash; All rights reserved.</p>
+    <p class="footer-links">
+      <a href="mailto:jjbecker@live.com">jjbecker@live.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://twitter.com/jacksonjbecker" target="_blank" rel="noopener">@jacksonjbecker</a>
+    </p>
   </footer>
 
   <script>
-    // Quote cycling banner
     const quotes = [
       { text: "Every little detail you can smuggle into your fiction makes the world more real for your reader.", cite: "— Neil Gaiman" },
       { text: "We are the cosmos made conscious, and life is a means by which the universe understands itself.", cite: "— Professor Brian Cox" },
@@ -124,18 +119,18 @@
       bq.style.opacity = '0';
       setTimeout(() => {
         qi = (qi + 1) % quotes.length;
-        bq.querySelector('.quote-text').textContent = '“' + quotes[qi].text + '”';
+        bq.querySelector('.quote-text').textContent = '"' + quotes[qi].text + '"';
         bq.querySelector('.quote-cite').textContent = quotes[qi].cite;
         bq.style.opacity = '1';
       }, 600);
     }, 6000);
 
-    // Interests dropdown (mobile tap support)
     document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const dd = this.closest('.nav-dropdown');
-        dd.classList.toggle('open');
+        if (window.matchMedia('(hover: none)').matches) {
+          e.preventDefault();
+          this.closest('.nav-dropdown').classList.toggle('open');
+        }
       });
     });
     document.addEventListener('click', function(e) {

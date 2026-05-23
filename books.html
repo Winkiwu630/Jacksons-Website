@@ -24,7 +24,7 @@
           <a href="recycling.html">Recycling</a>
         </div>
       </div>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -60,7 +60,7 @@
 
     <section>
       <h2>In Progress</h2>
-      <p class="book-section-label">The books below are currently unpublished and unrepresented. Jackson is always happy to take on new beta readers or critique partners — <a href="#contact" style="color:#4a7a5a;">reach out</a> if interested.</p>
+      <p class="book-section-label">The books below are currently unpublished and unrepresented. Jackson is always happy to take on new beta readers or critique partners — <a href="contact.html" style="color:#4a7a5a;">reach out</a> if interested.</p>
 
       <div class="book-card">
         <div class="book-cover">
@@ -112,19 +112,15 @@
 
     </section>
 
-    <section id="contact">
-      <h2>Get in Touch</h2>
-      <p>Interested in Jackson's work, want to beta read, or just have a question? Reach out below.</p>
-      <div class="contact-links">
-        <a href="mailto:jjbecker@live.com" class="buy-btn bn">Email Jackson</a>
-        <a href="https://twitter.com/jacksonjbecker" class="buy-btn bn" target="_blank" rel="noopener">Twitter / X</a>
-      </div>
-    </section>
-
   </main>
 
   <footer>
     <p>&copy; 2026 Jackson J Becker &mdash; All rights reserved.</p>
+    <p class="footer-links">
+      <a href="mailto:jjbecker@live.com">jjbecker@live.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://twitter.com/jacksonjbecker" target="_blank" rel="noopener">@jacksonjbecker</a>
+    </p>
   </footer>
 
   <script>
@@ -139,7 +135,7 @@
       bq.style.opacity = '0';
       setTimeout(() => {
         qi = (qi + 1) % quotes.length;
-        bq.querySelector('.quote-text').textContent = '“' + quotes[qi].text + '”';
+        bq.querySelector('.quote-text').textContent = '"' + quotes[qi].text + '"';
         bq.querySelector('.quote-cite').textContent = quotes[qi].cite;
         bq.style.opacity = '1';
       }, 600);
@@ -147,8 +143,10 @@
 
     document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.closest('.nav-dropdown').classList.toggle('open');
+        if (window.matchMedia('(hover: none)').matches) {
+          e.preventDefault();
+          this.closest('.nav-dropdown').classList.toggle('open');
+        }
       });
     });
     document.addEventListener('click', function(e) {

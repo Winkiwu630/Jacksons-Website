@@ -45,7 +45,7 @@ header {
 h1 {
   font-size: 1.9rem;
   letter-spacing: 2px;
-  color: red;
+  color: #e8e8e8;
   margin-bottom: 4px;
 }
 
@@ -107,7 +107,7 @@ nav a.active:hover { background-color: #3a3a3a; }
 .nav-dropdown-content {
   display: none;
   position: absolute;
-  top: calc(100% + 6px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
@@ -117,6 +117,7 @@ nav a.active:hover { background-color: #3a3a3a; }
   z-index: 200;
   min-width: 180px;
   overflow: hidden;
+  padding-top: 4px;
 }
 
 @media (hover: hover) {
@@ -491,6 +492,19 @@ footer {
   font-family: Arial, sans-serif;
   font-size: 0.85rem;
 }
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 0.82rem;
+}
+
+.footer-links a {
+  color: #808090;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: #c0c0d0; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 620px) {
