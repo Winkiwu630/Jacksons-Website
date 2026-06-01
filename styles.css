@@ -546,30 +546,25 @@ footer {
 
 .footer-links a:hover { color: #c0c0d0; }
 
-/* ── HOME LAYOUT (two-column with sidebar) ── */
+/* ── HOME LAYOUT ── */
 .home-layout {
   flex: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 28px;
-  max-width: 1220px;
-  width: 100%;
-  margin: 0 auto;
+  position: relative; /* anchor for absolute sidebar on wide screens */
+}
+
+/* Sidebar: default sits below main, widgets side by side */
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 40px;
   padding: 0 20px;
 }
 
-.home-layout main {
-  max-width: none;
-  width: 100%;
-  margin: 40px 0;
-  padding: 0;
-}
-
-.sidebar {
-  margin: 40px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.sidebar .widget {
+  flex: 1;
+  min-width: 220px;
 }
 
 /* ── SIDEBAR WIDGETS ── */
@@ -754,21 +749,29 @@ footer {
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 840px) {
-  .home-layout {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 0 20px;
-  }
 
-  .home-layout main {
-    margin: 40px 0 0;
-    order: 1;
-  }
-
+/* Wide screens: sidebar floats into the right margin */
+@media (min-width: 1480px) {
   .sidebar {
-    margin: 24px 0 40px;
-    order: 2;
+    position: absolute;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    left: calc(50% + 480px);
+    top: 40px;
+    width: 240px;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar .widget {
+    flex: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    flex-direction: column;
   }
 }
 
