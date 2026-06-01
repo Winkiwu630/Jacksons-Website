@@ -52,7 +52,7 @@ header {
 h1 {
   font-size: 1.9rem;
   letter-spacing: 2px;
-  color: #e8e8e8;
+  color: red;
   margin-bottom: 4px;
 }
 
@@ -546,7 +546,232 @@ footer {
 
 .footer-links a:hover { color: #c0c0d0; }
 
+/* ── HOME LAYOUT (two-column with sidebar) ── */
+.home-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 28px;
+  max-width: 1220px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.home-layout main {
+  max-width: none;
+  width: 100%;
+  margin: 40px 0;
+  padding: 0;
+}
+
+.sidebar {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── SIDEBAR WIDGETS ── */
+.widget {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15), 0 12px 24px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.widget-title {
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  background: #1c1c1c;
+  color: #e8e8e8;
+  padding: 12px 18px;
+  margin: 0;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.event-list {
+  padding: 12px 18px;
+}
+
+.no-events {
+  font-size: 0.88rem;
+  color: #6b6b6b;
+  font-style: italic;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 16px 0;
+  line-height: 1.6;
+}
+
+.event-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.event-item:last-child { border-bottom: none; }
+
+.event-date-badge {
+  flex-shrink: 0;
+  width: 42px;
+  background: #1c1c1c;
+  border-radius: 6px;
+  text-align: center;
+  padding: 4px 0 6px;
+}
+
+.event-month {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #a0a0a0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-day {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.event-details strong {
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  color: #1c1c1c;
+  line-height: 1.3;
+}
+
+.event-details span {
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  color: #6b6b6b;
+  line-height: 1.4;
+}
+
+.gallery-teaser {
+  padding: 16px 18px;
+  text-align: center;
+}
+
+.gallery-teaser p {
+  font-size: 0.88rem;
+  color: #4a4a4a;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+
+.widget-link {
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #4a7a5a;
+  text-decoration: none;
+}
+
+.widget-link:hover { text-decoration: underline; }
+
+/* ── GALLERY PAGE ── */
+.gallery-event {
+  padding-top: 0;
+}
+
+.gallery-event + .gallery-event {
+  padding-top: 32px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 32px;
+}
+
+.gallery-event-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery-event-header h3 {
+  margin-bottom: 0;
+}
+
+.gallery-event-date {
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  color: #6b6b6b;
+  font-style: italic;
+}
+
+.gallery-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.gallery-photo-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: block;
+}
+
+.gallery-photo-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.gallery-placeholder {
+  background: #f5f5f5;
+  border: 2px dashed #c0c0c0;
+  border-radius: 8px;
+  padding: 48px 24px;
+  text-align: center;
+  color: #6b6b6b;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
 /* ── RESPONSIVE ── */
+@media (max-width: 840px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 20px;
+  }
+
+  .home-layout main {
+    margin: 40px 0 0;
+    order: 1;
+  }
+
+  .sidebar {
+    margin: 24px 0 40px;
+    order: 2;
+  }
+}
+
 @media (max-width: 620px) {
   h1 { font-size: 1.4rem; letter-spacing: 1px; }
   .tagline { font-size: 0.8rem; }
@@ -561,4 +786,5 @@ footer {
   section { padding: 24px 20px; }
   .quote-card { padding: 20px; }
   .nav-dropdown-content { left: 0; transform: none; }
+  .gallery-photo-grid { grid-template-columns: repeat(2, 1fr); }
 }

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Geomorphology videos by Jackson J Becker — exploring rivers, mountains, and more.">
+  <meta name="description" content="Event gallery — photos from Jackson J Becker's book launches, library readings, and author events.">
   <link rel="stylesheet" href="styles.css">
-  <title>Geomorphology — Jackson J Becker</title>
+  <title>Gallery — Jackson J Becker</title>
 </head>
 <body>
 
@@ -18,13 +18,13 @@
       <a href="index.html">Home</a>
       <a href="books.html">Books</a>
       <div class="nav-dropdown">
-        <a href="#" class="nav-dropdown-btn active">Interests ▾</a>
+        <a href="#" class="nav-dropdown-btn">Interests &#9662;</a>
         <div class="nav-dropdown-content">
-          <a href="geomorphology.html" class="active">Geomorphology</a>
+          <a href="geomorphology.html">Geomorphology</a>
           <a href="recycling.html">Recycling</a>
         </div>
       </div>
-      <a href="gallery.html">Gallery</a>
+      <a href="gallery.html" class="active">Gallery</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -38,21 +38,35 @@
 
   <main>
 
-    <section>
-      <h2>Geomorphology</h2>
-      <p style="font-size:1.05rem; color:#2c2c2c; margin-bottom:28px;">Somewhere after author, astronaut, and professional athlete, <em>Fluvial Geomorphology Professor</em> landed on my list of dream jobs. During the COVID lockdown in Minnesota, I put that passion to work and created a series of educational videos on geomorphology — the study of mountains, hills, rivers, and the forces that shape them. Rivers in particular hold a special fascination for me.</p>
-      <p style="font-size:1.05rem; color:#2c2c2c; margin-bottom:28px;">Below are the locations featured in the video series:</p>
+    <section id="gallery">
+      <h2>Event Gallery</h2>
 
-      <ul class="video-list">
-        <li>Minnewashta Regional Park</li>
-        <li>Interstate Park (MN &amp; WI)</li>
-        <li>Devil's Kettle (North Shore)</li>
-        <li>Badlands National Park</li>
-      </ul>
+      <!--
+        ADDING A NEW EVENT:
+        1. Create a folder under images/gallery/ (e.g. images/gallery/reading-jul-2026/)
+        2. Copy the gallery-event block below and update the title, date, and photo paths.
+        3. Add one <img> per photo inside the gallery-photo-grid div.
+        4. Remove the gallery-placeholder div once you have photos ready.
+      -->
 
-      <div class="disclaimer-box">
-        Most of this information is from my memory of lectures years ago. Real geomorphologists are welcome to correct me if I'm wrong about anything.
+      <!-- BOOK LAUNCH PARTY — May 31, 2026 -->
+      <div class="gallery-event">
+        <div class="gallery-event-header">
+          <h3>Recycla-Bull Book Launch Party</h3>
+          <span class="gallery-event-date">May 31, 2026</span>
+        </div>
+        <!--
+          TO ADD PHOTOS: Replace the gallery-placeholder below with:
+          <div class="gallery-photo-grid">
+            <img src="images/gallery/launch-2026/photo1.jpg" alt="Book launch party">
+            <img src="images/gallery/launch-2026/photo2.jpg" alt="Book launch party">
+          </div>
+        -->
+        <div class="gallery-placeholder">
+          Photos from the launch party coming soon!
+        </div>
       </div>
+
     </section>
 
   </main>
@@ -74,17 +88,16 @@
     ];
     let qi = 0;
     const bq = document.querySelector('.quote-banner blockquote');
-    // Lock banner to height of tallest quote at current viewport
     (function() {
       var banner = document.querySelector('.quote-banner');
       var maxH = 0;
       quotes.forEach(function(q) {
-        bq.querySelector('.quote-text').textContent = '“' + q.text + '”';
+        bq.querySelector('.quote-text').textContent = '"' + q.text + '"';
         bq.querySelector('.quote-cite').textContent = q.cite;
         maxH = Math.max(maxH, banner.scrollHeight);
       });
       banner.style.minHeight = maxH + 'px';
-      bq.querySelector('.quote-text').textContent = '“' + quotes[0].text + '”';
+      bq.querySelector('.quote-text').textContent = '"' + quotes[0].text + '"';
       bq.querySelector('.quote-cite').textContent = quotes[0].cite;
     })();
     setInterval(() => {
