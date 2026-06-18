@@ -533,6 +533,22 @@ footer {
   font-size: 0.85rem;
 }
 
+.footer-credits {
+  font-size: 0.7rem;
+  margin-top: 10px;
+  color: #808090;
+}
+
+.footer-credits a{
+  color: #808090;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-credits a:hover { 
+  color: #c0c0d0; 
+}
+
 .footer-links {
   margin-top: 10px;
   font-size: 0.82rem;
