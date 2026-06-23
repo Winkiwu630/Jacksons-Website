@@ -273,6 +273,13 @@ h3 {
 
 .about-text p:last-child { margin-bottom: 0; }
 
+.about-subheading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a7a5a;
+  margin: 22px 0 10px;
+}
+
 .author-landscape {
   width: 200px;
   display: block;
@@ -474,8 +481,9 @@ h3 {
 }
 
 .buy-btn:hover { opacity: 0.85; }
-.amazon { background-color: #f0921a; color: #fff; border-color: #d4800f; }
-.bn     { background-color: #1c1c1c; color: #f5f5f5; border-color: #1c1c1c; }
+.amazon   { background-color: black; color: #fff; border-color: black; }
+.bn       { background-color: #0c6604; color: #f5f5f5; border-color: #0c6604; }
+.bookshop { background-color: #8434b3; color: #fff; border-color: #8434b3; }
 
 /* ── QUOTES (inspiration page) ── */
 .quote-card {
